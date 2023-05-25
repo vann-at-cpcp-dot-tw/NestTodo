@@ -15,7 +15,8 @@ async function bootstrap() {
     defaultVersion: '1'
   })
 
-  app.useGlobalFilters(new HttpExceptionFilter()) // format 錯誤拋出的格式
+  // 使用 useGlobalFilters 可以全域的 format 錯誤拋出的格式，但更建議在 module 層級，透過依賴注入 custom provider 來實作（請至 app.module.ts 查看）
+  // app.useGlobalFilters(new HttpExceptionFilter())
 
   await app.listen(port)
 }

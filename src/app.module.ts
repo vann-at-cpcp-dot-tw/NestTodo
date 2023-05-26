@@ -6,12 +6,14 @@ import { TodoModule } from './features/todo/todo.module'
 import { CopyTodoModule } from './features/copy-todo/copy-todo.module'
 import { APP_FILTER } from '@nestjs/core'
 import { HttpExceptionFilter } from './filters/http-exception/http-exception.filter'
+import { UserModule } from './user/user.module'
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     TodoModule,
-    CopyTodoModule
+    CopyTodoModule,
+    UserModule
   ],
   controllers: [
     AppController
